@@ -32,7 +32,8 @@
     "publish": {
       "provider": "github",
       "owner": "lymodevofc",
-      "repo": "lymo-music-player"
+      "repo": "lymo-music-player",
+      "releaseType": "release"
     }
   }
 }
