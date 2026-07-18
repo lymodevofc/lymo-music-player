@@ -1,0 +1,33 @@
+{
+  "name": "lymo-music-player",
+  "version": "1.0.0",
+  "description": "Lymo Music Player - Electron music player",
+  "main": "src/main.js",
+  "author": "Lymo",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder"
+  },
+  "devDependencies": {
+    "electron": "^31.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "dependencies": {
+    "music-metadata": "^7.14.0"
+  },
+  "build": {
+    "appId": "com.lymo.musicplayer",
+    "productName": "Lymo Music Player",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "src/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": "nsis"
+    }
+  }
+}

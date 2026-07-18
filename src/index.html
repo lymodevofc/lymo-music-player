@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Lymo Music Player</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <span class="brand-mark">LYMO</span>
+        <span class="brand-sub">MUSIC PLAYER</span>
+      </div>
+
+      <button id="selectFolderBtn" class="folder-btn">📁 Select Folder</button>
+
+      <div class="search-wrap">
+        <input id="searchInput" type="text" placeholder="Search song, artist or album..." />
+      </div>
+
+      <div id="trackList" class="track-list">
+        <div class="empty-state">Select a music folder to get started.</div>
+      </div>
+    </aside>
+
+    <main class="main-panel">
+      <div class="now-playing">
+        <div class="art-wrap">
+          <div id="albumArt" class="album-art">
+            <img id="albumArtImg" alt="Album cover" />
+          </div>
+          <div class="tonearm-base"></div>
+          <div id="tonearm" class="tonearm"></div>
+        </div>
+
+        <div class="track-info">
+          <h1 id="nowTitle">No Track Selected</h1>
+          <p id="nowArtist">—</p>
+          <p id="nowAlbum">—</p>
+        </div>
+      </div>
+
+      <div class="controls">
+        <div class="progress-row">
+          <span id="currentTime" class="time">0:00</span>
+          <input id="progressBar" type="range" min="0" max="100" value="0" step="0.1" />
+          <span id="durationTime" class="time">0:00</span>
+        </div>
+
+        <div class="buttons-row">
+          <button id="prevBtn" class="ctrl-btn" title="Previous"><span class="icon icon-prev"></span></button>
+          <button id="playPauseBtn" class="ctrl-btn play-btn" title="Play/Pause"><span id="playIcon" class="icon icon-play"></span></button>
+          <button id="nextBtn" class="ctrl-btn" title="Next"><span class="icon icon-next"></span></button>
+
+          <div class="volume-row">
+            <div id="volumeKnob" class="volume-knob" tabindex="0" role="slider" aria-label="Volume" aria-valuemin="0" aria-valuemax="100" aria-valuenow="80" title="Volume — drag up/down or scroll">
+              <svg class="knob-arc" viewBox="0 0 100 100">
+                <circle class="knob-arc-track" cx="50" cy="50" r="44"></circle>
+                <circle id="knobArcFill" class="knob-arc-fill" cx="50" cy="50" r="44"></circle>
+              </svg>
+              <div id="knobDial" class="knob-dial">
+                <div class="knob-pointer"></div>
+              </div>
+              <div id="knobValue" class="knob-value">🔊</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <audio id="audioPlayer"></audio>
+  <script src="renderer.js"></script>
+</body>
+</html>
