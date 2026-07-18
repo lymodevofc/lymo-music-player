@@ -19,6 +19,7 @@
   "build": {
     "appId": "com.lymo.musicplayer",
     "productName": "Lymo Music Player",
+    "artifactName": "LymoMusicPlayerSetup.exe",
     "directories": {
       "output": "dist"
     },
