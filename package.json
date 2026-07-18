@@ -28,6 +28,11 @@
     ],
     "win": {
       "target": "nsis"
+    },
+    "publish": {
+      "provider": "github",
+      "owner": "lymodevofc",
+      "repo": "lymo-music-player"
     }
   }
 }
