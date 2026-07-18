@@ -66,7 +66,7 @@ let isSeeking = false;
 
 const KNOB_RADIUS = 44;
 const KNOB_CIRCUMFERENCE = 2 * Math.PI * KNOB_RADIUS;
-const KNOB_ARC_DEG = 270;
+const KNOB_ARC_DEG = 360;
 const KNOB_ARC_LEN = KNOB_CIRCUMFERENCE * (KNOB_ARC_DEG / 360);
 
 knobArcFill.style.strokeDasharray = `${KNOB_ARC_LEN} ${KNOB_CIRCUMFERENCE}`;
@@ -93,7 +93,7 @@ function setVolume(v, { persist = true } = {}) {
   const fillLen = KNOB_ARC_LEN * (volume / 100);
   knobArcFill.style.strokeDasharray = `${fillLen} ${KNOB_CIRCUMFERENCE - fillLen}`;
 
-  const angle = -135 + (volume / 100) * KNOB_ARC_DEG;
+  const angle = (volume / 100) * KNOB_ARC_DEG;
   knobDial.style.transform = `rotate(${angle}deg)`;
 
   volumeKnob.setAttribute('aria-valuenow', String(volume));
